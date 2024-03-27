@@ -41,9 +41,12 @@ def main():
         person.fib()
         times_cpp_1.append(time.perf_counter() - start)
     
-    print("Python - Timings for n = 30 to 45: " + times_py_1)
-    print("Numba - Timings for n = 30 to 45: " + times_numba_1)
-    print("C++ - Timings for n = 30 to 45: " + times_cpp_1)
+    print("Python - Timings for n = 30 to 45: ")
+    print(times_py_1)
+    print("Numba - Timings for n = 30 to 45: ")
+    print(times_numba_1)
+    print("C++ - Timings for n = 30 to 45: ")
+    print(times_cpp_1)
     
     ns_2 = range(20, 31)
     times_py_2, times_numba_2 = [], []
@@ -59,8 +62,10 @@ def main():
         fib_numba(n)
         times_numba_2.append(time.perf_counter() - start)
         
-    print("Python - Timings for n = 20 to 30: " + times_py_2)
-    print("Numba - Timings for n = 20 to 30: " + times_numba_2)
+    print("Python - Timings for n = 20 to 30: ")
+    print(times_py_2)
+    print("Numba - Timings for n = 20 to 30: ")
+    print(times_numba_2)
 
     
     # Compute Fibonacci number for n = 47 using C++ and Numba
