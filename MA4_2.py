@@ -21,7 +21,8 @@ def fib_numba(n):
 
 def main():
     # Timings for n = 30 to 45
-    ns_1 = range(30, 46)
+    # ns_1 = range(30, 46)
+    ns_1 = range(30, 33)
     times_py_1, times_numba_1, times_cpp_1 = [], [], []
     
     for n in ns_1:
@@ -42,7 +43,8 @@ def main():
         times_cpp_1.append(time.perf_counter() - start)
     
     # Timings for n = 20 to 30
-    ns_2 = range(20, 31)
+    # ns_2 = range(20, 31)
+    ns_2 = range(20, 23)
     times_py_2, times_numba_2 = [], []
     
     for n in ns_2:
