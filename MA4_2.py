@@ -20,9 +20,8 @@ def fib_numba(n):
         return fib_numba(n-1) + fib_numba(n-2)
 
 def main():
-    # Timings for n = 30 to 45
-    # ns_1 = range(30, 46)
-    ns_1 = range(30, 33)
+
+    ns_1 = range(30, 46)
     times_py_1, times_numba_1, times_cpp_1 = [], [], []
     
     for n in ns_1:
@@ -38,13 +37,11 @@ def main():
         
         # Time C++ version
         start = time.perf_counter()
-        person = Person(n)  # Assumes Person class is already linked to fib method
+        person = Person(n)  
         person.fib()
         times_cpp_1.append(time.perf_counter() - start)
     
-    # Timings for n = 20 to 30
-    # ns_2 = range(20, 31)
-    ns_2 = range(20, 23)
+    ns_2 = range(20, 31)
     times_py_2, times_numba_2 = [], []
     
     for n in ns_2:
@@ -65,7 +62,7 @@ def main():
     # Plotting
     plt.figure(figsize=(12, 6))
     
-    # Plot timings for n = 30 to 45
+    
     plt.subplot(2, 1, 1)
     plt.plot(ns_1, times_py_1, label='Python')
     plt.plot(ns_1, times_numba_1, label='Numba')
@@ -75,7 +72,7 @@ def main():
     plt.title('Timings for n = 30 to 45')
     plt.legend()
     
-    # Plot timings for n = 20 to 30
+    
     plt.subplot(2, 1, 2)
     plt.plot(ns_2, times_py_2, label='Python')
     plt.plot(ns_2, times_numba_2, label='Numba')
@@ -94,3 +91,10 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# Fibonacci number for n = 47 (C++): -1323752223
+# Fibonacci number for n = 47 (Numba): 2971215073
+
+# Reason:
+#     The difference in results is due to the computation or handling of large Fibonacci numbers. The negative
+#     value obtained for the C++ computation tells us the potential overflow or underflow issues.
