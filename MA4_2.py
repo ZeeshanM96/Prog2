@@ -41,19 +41,19 @@ def main():
         person.fib()
         times_cpp_1.append(time.perf_counter() - start)
     
-    ns_2 = range(20, 31)
-    times_py_2, times_numba_2 = [], []
+    # ns_2 = range(20, 31)
+    # times_py_2, times_numba_2 = [], []
     
-    for n in ns_2:
-        # Time Python version
-        start = time.perf_counter()
-        fib_py(n)
-        times_py_2.append(time.perf_counter() - start)
+    # for n in ns_2:
+    #     # Time Python version
+    #     start = time.perf_counter()
+    #     fib_py(n)
+    #     times_py_2.append(time.perf_counter() - start)
         
-        # Time Numba version
-        start = time.perf_counter()
-        fib_numba(n)
-        times_numba_2.append(time.perf_counter() - start)
+    #     # Time Numba version
+    #     start = time.perf_counter()
+    #     fib_numba(n)
+    #     times_numba_2.append(time.perf_counter() - start)
     
     # Compute Fibonacci number for n = 47 using C++ and Numba
     fib_cpp_47 = Person(47).fib()
@@ -73,13 +73,13 @@ def main():
     plt.legend()
     
     
-    plt.subplot(2, 1, 2)
-    plt.plot(ns_2, times_py_2, label='Python')
-    plt.plot(ns_2, times_numba_2, label='Numba')
-    plt.xlabel('Fibonacci Number n')
-    plt.ylabel('Time (seconds)')
-    plt.title('Timings for n = 20 to 30')
-    plt.legend()
+    # plt.subplot(2, 1, 2)
+    # plt.plot(ns_2, times_py_2, label='Python')
+    # plt.plot(ns_2, times_numba_2, label='Numba')
+    # plt.xlabel('Fibonacci Number n')
+    # plt.ylabel('Time (seconds)')
+    # plt.title('Timings for n = 20 to 30')
+    # plt.legend()
     
     # Save the plot
     plt.tight_layout()
